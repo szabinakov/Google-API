@@ -1,62 +1,78 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+## Project using the Google map API
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+The project has 3 pages Login, Register and Home.
+On the Register page the user is being asked for registering and required to provide their postcode.
+Once registered the user is being redirected to the Home page where he can see a map and all other users who are registered with a flag on a map.
+If they click on the flag they are able to see the other registered user's details such as email address, name, postcode.
 
-## About Laravel
+#### Built with:
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+-   [Laravel](https://laravel.com/)
+-   [JavaScript](https://www.javascript.com/)
+-   [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
+-   [Axios](https://www.npmjs.com/package/axios)
+-   [Google Geocoding API for Laravel](https://github.com/jotafurtado/geocode)
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## How to run the app
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+-   First step clone the repository
 
-## Learning Laravel
+```
+git clone //repolink//
+```
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+-   cd into the project
+-   Install composer dependencies
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+```
+composer install
+```
 
-## Laravel Sponsors
+-   Install NPM dependencies
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+```
+npm install
+```
 
-### Premium Partners
+-   Create a copy of your .env file
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/)**
-- **[OP.GG](https://op.gg)**
+```
+cp .env.example .env
+```
 
-## Contributing
+-   Generate an app encryption key
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Laravel requires you to have an app encryption key which is generally randomly generated and stored in your <mark>.env</mark> file. The app will use this encryption key to encode various elements of your application from cookies to password hashes and more.
 
-## Code of Conduct
+Laravel’s command line tools thankfully make it super easy to generate this. In the terminal we can run this command to generate that key. (Make sure that you have already installed Laravel via composer and created an .env file before doing this, of which we have done both).
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+```
+php artisan key:generate
+```
 
-## Security Vulnerabilities
+If you check the <mark>.env</mark> file again, you will see that it now has a long random string of characters in the <mark>APP_KEY</mark> field. We now have a valid app encryption key.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+-   Create an empty database for the application
 
-## License
+(I have used [XAMPP](https://www.apachefriends.org/hu/index.html)-[MySQL](https://www.mysql.com/))
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+-   In the .env file, add DB information to allow Laravel to connect to DB
+-   In the .env file you also has to set your Google API Key which you can get from [here](https://developers.google.com/maps)!
+
+You can find multiple API's you need to enable the [Maps Javascript API](https://developers.google.com/maps/documentation/javascript/overview)
+
+-   Migrate the database
+
+The project contains the migration files
+
+```
+php artisan migrate
+```
+
+-   And as the final step
+
+```
+php artisan serve
+```
+
+Now in your browser go to the localhost port your app started on and you can use the app
