@@ -48,9 +48,11 @@ footer {
 }
 .navbar-container {
     padding: 5px;
-    width: 350px;
+    display: flex;
+    justify-content: space-between;
 }
 .navbar {
+    width: 350px;
     display: flex;
     justify-content: space-evenly;
 }
@@ -69,7 +71,6 @@ footer {
     width: 70px;
     height: 25px;
     border-radius: 10px;
-    margin: 10px 0px 0px 10px;
     border: none;
     background: rgba(255, 220, 124, 0.87);
 }

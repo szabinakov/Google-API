@@ -14,6 +14,7 @@
         <nav class="navbar">
             <a class="@if( auth()->check() )hidden @endif" href="/login">Login</a>
             <a class="@if( auth()->check() )hidden @endif" href="/">Register</a>
+            <a href="/contact">Contact</a>
         </nav>
         <form class=" @if(! auth()->check() )hidden @endif" action="/logout" method="POST">
             @csrf
