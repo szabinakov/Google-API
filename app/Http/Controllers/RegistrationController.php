@@ -43,7 +43,7 @@ class RegistrationController extends Controller
             auth()->login($user);
             return redirect('/home');
         } else {
-            return redirect('/register')->with('mssg', 'Post Code invalid!');
+            return redirect('/')->with('mssg', 'Post Code invalid!');
         }
 
 

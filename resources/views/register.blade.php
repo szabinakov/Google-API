@@ -2,7 +2,7 @@
 
 @section('content')
     {{session('mssg')}}
-    <form method="POST" action="/register" id="location-form" class="form-group">
+    <form method="POST" action="/" id="location-form" class="form-group">
         @csrf
         <label>Name:</label>
             <input name="name" type="text" id="name" placeholder="Type name..." />

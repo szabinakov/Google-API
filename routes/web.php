@@ -16,8 +16,8 @@ use App\Http\Controllers\RegistrationController;
 |
 */
 
-Route::get('/register', [RegistrationController::class, 'create']);
-Route::post('/register', [RegistrationController::class, 'store']);
+Route::get('/', [RegistrationController::class, 'create']);
+Route::post('/', [RegistrationController::class, 'store']);
 
 Route::get('/home', [UserController::class, 'index']);
 Route::get('/allflags', [UserController::class, 'getAll']);

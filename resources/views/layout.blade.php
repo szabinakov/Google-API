@@ -13,7 +13,7 @@
     <div class="navbar-container">
         <nav class="navbar">
             <a class="@if( auth()->check() )hidden @endif" href="/login">Login</a>
-            <a class="@if( auth()->check() )hidden @endif" href="/register">Register</a>
+            <a class="@if( auth()->check() )hidden @endif" href="/">Register</a>
         </nav>
         <form class=" @if(! auth()->check() )hidden @endif" action="/logout" method="POST">
             @csrf

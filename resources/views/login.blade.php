@@ -8,6 +8,6 @@
         <label>Password:</label>
         <input name="password" type="password" id="password" placeholder="Type password..." />
         <button type="submit">Login</button>
-        <p>Click <a href="/register">here</a> to register!</p>
+        <p>Click <a href="/">here</a> to register!</p>
     </form>
 @endsection
