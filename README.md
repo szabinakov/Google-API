@@ -5,7 +5,7 @@ On the Register page the user is being asked for registering and required to pro
 Once registered the user is being redirected to the Home page where he can see a map and all other users who are registered with a flag on a map.
 If they click on the flag they are able to see the other registered user's details such as email address, name, postcode.
 
-### Desigen
+### Design
 
 Register and Login Page:
 ![reg and log in](public/images/loginreg.png)
