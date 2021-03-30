@@ -21,7 +21,9 @@ Route::post('/', [RegistrationController::class, 'store']);
 
 Route::get('/home', [UserController::class, 'index']);
 Route::get('/allflags', [UserController::class, 'getAll']);
+
 Route::get('/contact', [UserController::class, 'contact']);
+Route::post('/contact', [UserController::class, 'send']);
 
 Route::get('/login', [LoginController::class, 'index']);
 Route::post('/login', [LoginController::class, 'login']);
